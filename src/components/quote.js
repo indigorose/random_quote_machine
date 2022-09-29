@@ -1,28 +1,25 @@
 import React from 'react';
+import './quote.css';
 
 const Quote = () => {
   return (
     <>
-      <p>hi</p>
       <div className="main-container">
-        <div id="quote-box" className="container--quote-box">
-          {/* both quote and author is drawing randomly from the data of quotes */}
+        <div className="container--quote-box">
           <p id="text">random quote</p>
           <p id="author">author</p>
-          {/* button should generate a new quote from data */}
-          <button id="new-quote">New Quote</button>
-          <button id="tweet-quote">
-            <a
-              href="twitter.com/intent/tweet"
-              id="tweet-quote"
-              target="_blank"
-              ref="noreferrer"
-            >
-              tweet icon
-            </a>
-          </button>
+          <div className="container--quote-btn">
+            <button id="tweet-quote">tweet icon</button>
+            <button id="new-quote">New Quote</button>
+          </div>
         </div>
       </div>
+      {/* <a
+          href="twitter.com/intent/tweet"
+          id="tweet-quote"
+          target="_blank"
+          ref="noreferrer"        </a>
+        > */}
     </>
   );
 };
