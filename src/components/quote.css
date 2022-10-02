@@ -1,26 +1,26 @@
-.main-container {
+.container {
   border: 1px solid red;
-  max-width: 500px;
-  height: 40vh;
-  margin: 300px auto;
-  background: white;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
 }
 .container--quote-box {
-  max-width: 90%;
-  border: 1px solid blue;
+  max-width: 50%;
   margin: 200px auto;
+  border: 1px solid blue;
+  background-color: white;
 }
 
-body {
-  background: rgb(159, 244, 219);
+#text {
+  text-align: center;
 }
-
-.container--quote-btn {
-  display: grid;
-  grid-template-columns: auto auto;
-  gap: 300px;
+#author {
+  text-align: right;
+  padding-right: 50px;
 }
 /* The container is white 
 The background, text and buttons are random on the new quote click.
-This is similar to the hex colour change vanilla js project.
+This is similar to the hex colour change vanilla js project. - DONE
 */
+
+/* TODO - amend layout of divs, add a max-width media query for quote-box*/

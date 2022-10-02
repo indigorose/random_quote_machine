@@ -1,46 +1,37 @@
 import React, { useState } from 'react';
 import './quote.css';
-
+// import { data } from '../assets/data'
 const Quote = () => {
-  const hex = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F'];
-  // const color = document.querySelector('.color');
-
-  let hexColor = '#';
-  for (let i = 0; i < 6; i++) {
-    hexColor += hex[getRandomNumber()];
-  }
-  // color.textContent = hexColor;
-  // document.body.style.backgroundColor = hexColor;
-  console.log(hexColor);
-
-  function getRandomNumber() {
-    return Math.floor(Math.random() * hex.length);
-  }
-  const [click, setClick] = useState(false);
-  const handleClick = () => setClick(!click);
-  // const [color, setColor] = useState(false);
-  // Need to sort out the background and the text.
+  const [color, setColor] = useState('#103f45');
+  const generateColor = () => {
+    const randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+    setColor(randomColor);
+  };
+  // TODO - Need to sort out the background and the text. - DONE!
+  // TODO - Change the quote randomly. Data has already be added.
 
   return (
     <>
-      <div className="main-container">
-        <div className="container--quote-box">
-          <p id="text">random quote</p>
-          <p id="author">author</p>
-          <div className="container--quote-btn">
-            <button id="tweet-quote">tweet icon</button>
-            <button id="new-quote" onClick={handleClick}>
-              New Quote
-            </button>
-          </div>
+      <div className="container" style={{ backgroundColor: `${color}` }}>
+        <div className="container--quote-box" id="quote-box">
+          <p id="text" style={{ color: `${color}` }}>
+            random quote {color}
+          </p>
+          <p id="author" style={{ color: `${color}` }}>
+            author
+          </p>
+          <a
+            href="http://twitter.com/intent/tweet"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Tweet Quote
+          </a>
+          <button id="new-quote" onClick={generateColor}>
+            New Quote
+          </button>
         </div>
       </div>
-      {/* <a
-          href="twitter.com/intent/tweet"
-          id="tweet-quote"
-          target="_blank"
-          ref="noreferrer"        </a>
-        > */}
     </>
   );
 };
