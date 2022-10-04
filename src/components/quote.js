@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import './quote.css';
 import { data } from '../assets/data';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 const Quote = () => {
   const [color, setColor] = useState('#103f45');
   const generateColor = () => {
@@ -21,17 +23,19 @@ const Quote = () => {
       <div className="container" style={{ backgroundColor: `${color}` }}>
         <div className="container--quote-box" id="quote-box">
           <p id="text" style={{ color: `${color}` }}>
-            {data[randomNumber].quote}
+            "{data[randomNumber].quote}"
           </p>
           <p id="author" style={{ color: `${color}` }}>
             {data[randomNumber].name}
           </p>
           <a
-            href="http://twitter.com/intent/tweet"
+            href="http://twitter.com/intent/tweet?text=Hello%20World"
             target="_blank"
             rel="noopener noreferrer"
+            id="share-quote"
+            style={{ backgroundColor: `${color}` }}
           >
-            Tweet Quote
+            <FontAwesomeIcon icon={faTwitter} />
           </a>
           <button
             id="new-quote"
@@ -39,6 +43,7 @@ const Quote = () => {
               generateColor();
               generateNumber();
             }}
+            style={{ backgroundColor: `${color}` }}
           >
             New Quote
           </button>
