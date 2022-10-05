@@ -20,6 +20,9 @@ body {
   text-align: center;
   font-size: 2rem;
 }
+#text .clicked {
+  transition: 5s;
+}
 #author {
   text-align: right;
   padding-right: 50px;

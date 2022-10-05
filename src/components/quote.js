@@ -22,7 +22,7 @@ const Quote = () => {
     <>
       <div className="container" style={{ backgroundColor: `${color}` }}>
         <div className="container--quote-box" id="quote-box">
-          <p id="text" style={{ color: `${color}` }}>
+          <p id="text" className="clicked" style={{ color: `${color}` }}>
             "{data[randomNumber].quote}"
           </p>
           <p id="author" style={{ color: `${color}` }}>
